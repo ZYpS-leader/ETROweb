@@ -1,0 +1,37 @@
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block nav %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1 class="display-4">vip购买与兑换</h1>
+    <hr>
+    <a href='/'>Return</a><br>付费购买vip服务通道未开启,请稍后再来
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.name.label }}
+            {% if form.name.errors %}
+                {{ form.name(class='form-control is-invalid') }}
+                {% for error in form.name.errors %}
+                    <div class="invalid-feedback">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                {{ form.name(class='form-control') }}
+            {% endif %}
+        </div>
+        <p style='color: red;'>{{ nowd }}</p><br>
+        {{ form.submit(class='btn btn-primary') }}
+    </form>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+

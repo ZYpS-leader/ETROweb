@@ -1,0 +1,2 @@
+In this website you can write anything, but only ASCII chars can be added into the head. I am not so sure whether Chinese chars can exist in the body.
+ОЭЯёетбљ! It sometimes stops working, and due to some reasons, I maybe can't solve it soon. Maybe it will be solved some day.

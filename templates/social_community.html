@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>{{ social.name }}的社区空间</h2>
+    <h5>该社区的创始人(同时为拥有者)为:{{ social.owner }}</h5>
+
+    <font color="blue">社区长对社区的描述为:<br><b>{{ social.desc }}</font></b><br>({{ social.info }})
+    {% if social.cansee %}
+    <ul>
+        {% for i in heads %}
+            <li><a href="{{ url_for('article',head=i[0],from='social' )}}')">{{ i[0] }}</a></li>
+
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+{% endblock%}

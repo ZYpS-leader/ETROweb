@@ -1,0 +1,48 @@
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+<link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+{% endblock %}
+
+{% block nav %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1 class="display-4">百度图片 关键字搜索</h1>
+    <hr>
+    <form method="post">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.name.label }}
+            {% if form.name.errors %}
+                {{ form.name(class='form-control is-invalid') }}
+                {% for error in form.name.errors %}
+                    <div class="invalid-feedback">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                {{ form.name(class='form-control') }}
+            {% endif %}
+            {{ form.times.label }}
+            {% if form.times.errors %}
+                {{ form.times(class='form-control is-invalid') }}
+                {% for error in form.times.errors %}
+                    <div class="invalid-feedback">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                {{ form.times(class='form-control') }}
+            {% endif %}
+        </div>
+        {{ form.submit(class='btn btn-primary') }}
+    </form>
+<p>请注意,由于图片需要总站爬取,因此点击提交后会卡住一段时间,浏览器图片会"转圈圈".此时请务必不要再次点击提交,否则会导致服务器请求失败!!!</p>
+
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+

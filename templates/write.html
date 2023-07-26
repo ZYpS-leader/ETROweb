@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>写作空间</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+        {{ ckeditor.load_code_theme() }}
+</head>
+<body>
+    <div class="container">
+        <br>
+        <h1 class="display-4">Write an article</h1>
+        <hr>
+        <form method="post">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.texthead.label }}
+                {% if form.texthead.errors %}
+                    {{ form.texthead(class='form-control is-invalid') }}
+                    {% for error in form.texthead.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.texthead(class='form-control') }}
+                {% endif %}
+            </div>
+            {{ form.body.label }}{{ form.body() }}<br>
+            <div class="form-check">
+                {{ form.typea(class='form-check-input')}}
+                {{ form.typea.label }}
+            </div>    
+            <div class="form-check">
+                {{ form.typeb(class='form-check-input')}}
+                {{ form.typeb.label }}
+            </div>    
+            {{ form.submit(class='btn btn-primary') }}
+
+        </form>
+        {{ ckeditor.load() }}
+    {{ ckeditor.config(name='body') }}
+    </div>
+
+
+
+</body>
+<script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
+</html>
+
+
+
+

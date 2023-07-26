@@ -1,0 +1,10 @@
+<h1>您刚刚在ETRO网站内遭遇了用户错误:</h1>
+<h4>来源:{{ ly }}</h4>
+可能的修复或解决方法:
+<ul>
+    {% for i in fangfas %}
+        <li>{{ i }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('index') }}">返回首页</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url_for('signin') }}">返回登录界面</a>
+

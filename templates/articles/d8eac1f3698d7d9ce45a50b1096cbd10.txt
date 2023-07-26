@@ -1,0 +1,105 @@
+<h1>vip制度和用户等级说明</h1>
+<h5>作者: Alex_omega&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建时间:2023/07/21/ 14:32:39</h5>
+<body>
+<p>本文是对本站的<strong>vip制度</strong>和<strong>用户等级制度</strong>作出说明和要求的.</p>
+
+<h2>一、vip制度</h2>
+
+<p>在网站首页上方可以看到&ldquo;兑换会员&rdquo;链接，您可以凭借vip兑换码兑换<strong>永久</strong>vip。</p>
+
+<ul>
+	<li>如何获得vip兑换码？</li>
+</ul>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 您可以通过支付宝购买（详细渠道见兑换会员页）或由不定时活动中免费获取。</p>
+
+<ul>
+	<li>vip有什么用？</li>
+</ul>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 在兑换vip之后将瞬间获得1000点经验（用于升级用户等级，详见下文），且vip用户可无限次数使用本站提供的付费工具。</p>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 另外，vip用户可以自行删除自己的文章（当然不能删除他人的文章！）</p>
+
+<ul>
+	<li>是否可以退款？</li>
+</ul>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 目前而言，您在购买后将无法退款。在购买前请深思熟虑。</p>
+
+<ul>
+	<li>vip有时间限制吗？</li>
+</ul>
+
+<p>&nbsp; &nbsp; &nbsp; &nbsp; 没有。vip兑换后就是永久vip。</p>
+
+<h2>二、用户等级制度</h2>
+
+<p>通过发布文章和上传资源，您可以获取用户积分。（当然，购买会员也可以获得1000点经验。）入站时等级为1级，积分为0。升级规则如下：</p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
+	<tbody>
+		<tr>
+			<td>等级</td>
+			<td>升级到该等级所需要的积分</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>128</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>512</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>1024</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>4096</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>16384</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>65536</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>135000</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>300000</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>888888</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>在用户首次达到7级时，将自动赠与永久vip（<strong>直接获得，不需要兑换</strong>）。</p>
+
+<p>用户等级达到5级时，可以无限次数使用部分本站提供的付费工具（仅部分，其他需要7级获取vip）。</p>
+
+<p>通过发布文章，每次至少可获得10点积分，随后每300字增加一点积分；每日上限150分；</p>
+
+<p>通过上传资源，每次获得3点积分，每日上限150积分。</p>
+
+<p>&nbsp;</p>
+
+<p>更多功能正在开发中。</p>
+
+<p>&nbsp;</p>
+
+<p>&mdash;&mdash;ETRO网络部 本站负责人 omega</p>
+</body>
+<a href=""

@@ -1,0 +1,48 @@
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block nav %}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <br>
+        <h2 class="display-4">管理员界面-审批通过社区成立申请</h2>
+        <hr>
+        <form method="post">
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.admincode.label }}
+                {% if form.admincode.errors %}
+                    {{ form.admincode(class='form-control is-invalid') }}
+                    {% for error in form.admincode.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.admincode(class='form-control') }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.social_na.label }}
+                {% if form.social_na.errors %}
+                    {{ form.social_na(class='form-control is-invalid') }}
+                    {% for error in form.social_na.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {{ form.social_na(class='form-control') }}
+                {% endif %}
+            </div> 
+            {{ form.submit(class='btn btn-primary') }}
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+

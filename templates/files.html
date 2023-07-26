@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'quxs.html' import qux %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>All the files</h1>
+<ul>
+    {% for i in all_file %}
+        <li><a href="{{ url_for('download_file',head=i.a) }}">{{ i.a }}--------------------上传时间:{{i.b}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

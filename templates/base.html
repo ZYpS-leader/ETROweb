@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% block head %}
+        <meta charset="utf-8">
+        <title>{% block title %}ETRO-website{% endblock %}</title>
+        {% block styles %}
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+            <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+        {% endblock %}
+    {% endblock %}
+
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">首页</a></li>
+        <li><a href="{{ url_for('havevip') }}">购买会员</a></li>
+        <li><a href="{{ url_for('user_space',username=i) }}">我的空间</a></li>
+    </ul>
+</nav>
+
+<main>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    {% block footer %}
+        <small>CopyRight &copy; Inc. 2023 <a href="https://github.com/ZYpS-leader" title="Author's Github">GitHub</a> /
+            <a href="http://helloflask.com" title="Base on flask">Project from Flask</a>
+        </small>
+    {% endblock %}
+</footer>
+{% block scripts %}
+    <script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
+{% endblock %}
+</body>
+</html>

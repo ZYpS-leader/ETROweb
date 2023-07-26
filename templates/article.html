@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ head }}</h1>
+<h5>Author(Written by): {{ author }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Written time:{{ time }}</h5>
+<body>
+<div class="body" id="text">
+{% for i in m %}
+    {{ i }}<br>
+{% endfor %}
+</div></body>
+<script type="text/javascript">
+  function modifyinnerHTML() {
+    var text = document.getElementById('example')
+    text.innerHTML = text.innerText // 把该元素做为HTML元素来解析
+  }
+  modifyinnerHTML()
+</script>
+{% endblock %}

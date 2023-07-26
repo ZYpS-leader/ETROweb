@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'quxs.html' import qux %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>出于性能考虑 管理员界面简化为了轻量版</h1>
+<h2>目录</h2>
+<ul>
+    <li><a href="{{ url_for('index') }}">刷新</a></li>
+    <li><a href="{{ url_for('signout') }}">登出</a></li>
+    <li><a href="{{ url_for('create')}}">创建并发布文章</a></li>
+    <li><a href="{{ url_for('upload') }}">上传资源</a></li>
+</ul>
+<h2>用户,资源和文章</h2>
+<ul>
+    <li><a href="{{ url_for('userall') }}">用户列表</a></li>
+    <li><a href="{{ url_for('allfiles') }}">资源列表</a></li>
+    <li><a href="{{ url_for('articles') }}">文章列表</a></li>
+</ul>
+<h2>管理员操作</h2>
+<ul>
+    <li><a href="admin/deluser">删除用户</a></li>
+    <li><a href="admin/delarti">删除文章</a></li>
+    <li><a href="admin/allow">审批社团</a></li>
+</ul>
+{% endblock %}

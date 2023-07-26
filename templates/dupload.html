@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<h2>File Upload Form</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    {{ form_field(form.file) }}
+    文件已存在!请刷新页面重试.
+    {{ form.submit }}
+</form>
+{% endblock %}

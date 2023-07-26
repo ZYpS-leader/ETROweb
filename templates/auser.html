@@ -1,0 +1,22 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+    <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+{% if a_user.ivip==1 %}
+    <h2>{{ a_user.name }}的空间</h2>
+    <h4 style="color: red;">该用户是一名★★★vip★★★!!!</h4>
+    <h5>{{ a_user.desc }}</h5>
+{% else %}
+    <h2>{{ a_user.name }}的空间</h2>
+    <h5>{{ a_user.desc }}</h5>
+{% endif%}
+<h5>入站时间:{{ a_user.time }}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;用户等级:{{ level }}</h5>
+<br>
+他的文章:
+<ul>
+    {% for i in ARTICLES %}
+        <li><a href="{{ url_for('article',head=i.xhx) }}">{{ i.ykg }}</a></li>
+    {% endfor %}
+</ul>
+</body>

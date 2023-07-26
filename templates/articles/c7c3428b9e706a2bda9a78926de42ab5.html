@@ -1,0 +1,39 @@
+<h1>后端传值换行符至前端无法识别的问题</h1>
+<h5>作者: wlmmmm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建时间:2023/07/17/ 20:48:01</h5>
+<body>
+<p><strong>问题：</strong></p>
+
+<p>后台传输文本变量（包含换行符<code>&lt;br&gt;</code>）至前端时，HTML页面未能识别<code>&lt;br&gt;</code>换行符，导致文本未换行，</p>
+
+<p><strong>原因：</strong></p>
+
+<p>后台传值时，br两侧的&lt;&gt;被转义为字符串<code>&amp;lt;</code>和<code>&amp;gt;</code>，前端将其识别为字符串，而非识别为HTML标签，导致换行失败。</p>
+
+<p><strong>解决方法：</strong></p>
+
+<p>将传值到前台的文本赋予innerHTML属性(通过javascript)，让浏览器能够识别文本中的HTML标签</p>
+
+<pre>
+<code class="language-html">&lt;html&gt;
+&lt;body&gt;
+  &lt;div id='example'&gt;
+    &lt;!-- 后台传入文本值 --&gt;
+    {{ textarea }}
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;script type="text/javascript"&gt;
+  function modifyinnerHTML() {
+    var text = document.getElementById('example') 
+    text.innerHTML = text.innerText // 把该元素做为HTML元素来解析
+  }
+  modifyinnerHTML()
+&lt;/script&gt;</code></pre>
+
+<p><strong>参考：</strong></p>
+
+<p>innerHTML：可以将获取的元素作为HTML元素进行解析或修改</p>
+
+<p>innerText：可以将获取的元素作为纯文本进行解析或修改</p>
+</body>
+<a href=""

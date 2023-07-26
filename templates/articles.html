@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'quxs.html' import qux %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>All the articles</h1>
+<ul>
+    {% for i in ARTICLES %}
+        <li><a href="{{ url_for('article',head=i.xhx) }}">{{ i.ykg }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

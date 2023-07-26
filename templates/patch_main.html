@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>资源爬取</h1>
+<div class="body">
+<ul>
+    <li><a href="{{ url_for('patch_1') }}">百度知道 关键字搜索</a></li>
+    <li><a href="{{ url_for('patch_2') }}">百度图片 关键字搜索</a></li>
+    <li><a href="">指定网址爬取</a></li>
+    <li><a href="{{ url_for('patch_3') }}">本站token文件提取</a></li>
+</ul>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'quxs.html' import qux %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>All the users</h1>
+<ul>
+    {% for i in all_user %}
+        <li><a href="{{ url_for('user_space',username=i.a) }}">{{i.b}}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

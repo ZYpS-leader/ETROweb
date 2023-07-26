@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from 'quxs.html' import qux %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>公告</h1>
+<p>由于服务器环境更换，采用的数据库版本出现了较大差异，这直接导致了用户数据无法进行迁移。即日起，至7月20日中午12:00前可使用vip兑换码<b>活动已结束</b>免费兑换vip。大部分用户数据的丢失意味着您将必须重新注册。我们已尽力恢复了大部分文章和文件数据，但仍有1个文件最终丢失。由此为您带来的不便，我深感抱歉。</p>
+<h1>目录</h1>
+<ul>
+    <li><a href="{{ url_for('index') }}">刷新</a></li>
+    <li><a href="{{ url_for('signup') }}">创建账号</a></li>
+    <li><a href="{{ url_for('signin') }}">登录</a></li>
+    <li><a href="{{ url_for('join_us') }}">加入我们!</a></li>
+</ul> 
+{% endblock %}
