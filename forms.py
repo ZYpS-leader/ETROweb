@@ -319,9 +319,12 @@ import smtplib as smtl
 from email.mime.multipart import MIMEMultipart as mmmlt
 from email.mime.text import MIMEText as mmtt
 from email.header import Header
+import json
+with open(".json") as secret:
+    secrets=json.load(secret) 
 def send_email(addr,yanzm):
     connect1=smtl.SMTP_SSL("smtp.163.com",465)
-    connect1.login("ETRO_gfyx@163.com","ETLBTOWYIUPTYHPX")
+    connect1.login("ETRO_gfyx@163.com",secrets["email key"])
     youjian=mmmlt()
     youjian["Subject"]=Header("ETRO网站的验证码",charset="utf-8").encode()
     youjian["To"]=addr

@@ -64,9 +64,14 @@ from forms import (
 from shutil import rmtree 
 spider=ImageSpider()
 app=Flask("app")
-app.secret_key="!@#$%^&*()1234567890"
-ckeditor=CKEditor(app)
 
+ckeditor=CKEditor(app)
+import json
+with open(".json") as secret:
+    secrets=json.load(secret) 
+vipcodes=secrets["vipcodes"]
+admincodes=secrets["admincodes"]
+app.secret_key=secrets["secret key"]
 #* os文件处理
 import os
 app.config["UPLOAD_PATH"]=os.path.join(app.root_path,"uploads")
@@ -97,9 +102,6 @@ def join_us():
     return """<a href="/">Return</a><br>Our Email: ETRO_gfyx@163.com<br>Or you can contact with me(ETRO.omega) by ETRO_omega@outlook.com"""
 
 
-vipcodes=[
-    "1145141919810_hash_for_1145141919810" 
-]
 #* 创建新账户(输入信息界面)
 @app.route("/signup1",methods=["GET","POST"])
 def signup():
@@ -558,9 +560,6 @@ def user_space():
     return redirect("/signin")
 
 
-admincodes=[
-    "18921047140987198421074817895710"
-]
 @app.route("/admin/allow",methods=["GET","POST"])
 def allow_social():
     form=all_social()
@@ -770,27 +769,6 @@ def echarts(mode):
     else:
         return render_template("echarts/d.html")
 
-
-#0000001001110001001110011110000101101011110100111101011101011011
-#00000010011100010011100111100001011010111101001111010111010110111
-""" 
->>> answer=[""]
->>> for i in range(len(b)):  
-...     if i!=len(b)-1:
-...             if b[i]=="":
-...                     answer[-1]+="1"
-...             else:
-...                     answer.append(b[i])
-...                     answer.append("1")
-...     else:
-...             if b[-1]=="":
-...                     pass
-...             else:
-...                     answer.append(b[-1])
-...
->>> answer
-['', '000000', '1', '00', '111', '000', '1', '00', '111', '00', '1111', '0000', '1', '0', '11', '0', '1', '0', '1111', '0', '1', '00', '1111', '0', '1', '0', '111', '0', '1', '0', '11', '0', '11']
-"""
 
 
 
