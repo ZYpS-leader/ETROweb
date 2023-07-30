@@ -66,6 +66,15 @@ class all_social(baseform):
 class uploadfile(baseform):
     file=FileField(u"上传文件:",validators=[FileRequired(u"不能上传空文件!")])
     submit=SubmitField(u"确定并上传")
+    
+class compressfile(baseform):
+    file=FileField(u"上传文件:",validators=[FileRequired(u"不能上传空文件!")])
+    submit=SubmitField(u"确定并压缩(稍后自动)") 
+    
+class decompressfile(baseform):
+    file=FileField(u"上传文件:",validators=[FileRequired(u"不能上传空文件!")])
+    type_=StringField("解压缩后的文件后缀名:(不带\".\")")
+    submit=SubmitField(u"确定并解压缩(稍后自动)")    
 
 class del_user(baseform):
     username=StringField(u"需要删除的用户:")

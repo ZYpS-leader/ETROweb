@@ -51,6 +51,8 @@ from forms import (
     _patch_1,
     _patch_2,
     _patch_3,
+    compressfile,
+    decompressfile,
     new_socail,
     all_social,
     getvip,
@@ -61,6 +63,8 @@ from forms import (
     get_level_and_score,
     add_score
     )
+from pathlib import Path
+import zlib
 from shutil import rmtree 
 spider=ImageSpider()
 app=Flask("app")
@@ -754,7 +758,7 @@ def aip_main():
 
 
 @app.route("/echarts")
-def test():
+def echart():
     return render_template("echarts_all.html")
 
 
@@ -768,6 +772,45 @@ def echarts(mode):
         return render_template("echarts/c.html")
     else:
         return render_template("echarts/d.html")
+
+
+
+@app.route("/compress",methods=["GET","POST"])
+def compress():
+    if "logged_in" in session or "to_up2" in session:
+        form=compressfile()
+        if form.validate_on_submit():
+            f = form.file.data
+            head = f.filename#! head:实际名称
+            head = Markup.escape(head)
+            f.save("files\\uzips\\"+head)
+            data=Path("files\\uzips\\"+head).read_bytes()
+            filetype="."+head.split(".")[-1]
+            with open("files\\uzips\\"+head.replace(filetype,"_cp.ogf"),"wb") as h:
+                h.write(zlib.compress(data,6))
+            return send_file("files\\uzips\\"+head.replace(filetype,"_cp.ogf"))
+        return render_template("tools/compress.html",form=form)
+    else:
+        return redirect("/signin") 
+    
+@app.route("/decompress",methods=["GET","POST"])
+def decompress():
+    if "logged_in" in session or "to_up2" in session:
+        form=decompressfile()
+        if form.validate_on_submit():
+            f = form.file.data
+            head = f.filename#! head:实际名称
+            head = Markup.escape(head)
+            f.save("files\\uzips\\"+head)
+            data=Path("files\\uzips\\"+head).read_bytes()
+            filetype=form.type_.data
+            with open("files\\uzips\\"+head.replace("_cp.ogf","."+filetype),"wb") as h:
+                h.write(zlib.decompress(data))
+            print("files\\uzips\\"+head.replace("_cp.ogf","."+filetype))
+            return send_file("files\\uzips\\"+head.replace("_cp.ogf","."+filetype))
+        return render_template("tools/decompress.html",form=form)
+    else:
+        return redirect("/signin")  
 
 
 

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<h2>压缩文件</h2>
+请选择需要压缩的文件,随后点击确定来下载压缩后的文件.
+<form method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    {{ form_field(form.file) }}
+    {{ form.submit }}
+</form>
+{% endblock %}

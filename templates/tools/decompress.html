@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<h2>解压缩文件</h2>
+请选择需要压缩的文件,随后点击确定来下载压缩后的文件.
+<form method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    {{ form_field(form.file) }}
+    <div class="form-group">
+        {{ form.type_.label }}
+        {% if form.type_.errors %}
+            {{ form.type_(class='form-control is-invalid') }}
+            {% for error in form.type_.errors %}
+                <div class="invalid-feedback">
+                    {{ error }}
+                </div>
+            {% endfor %}
+        {% else %}
+            {{ form.type_(class='form-control') }}
+        {% endif %}
+    </div>
+    {{ form.submit }}
+</form>
+{% endblock %}
