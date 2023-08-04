@@ -2,5 +2,5 @@
 .env
 __pycache__/app.cpython-37.pyc
 errors.err
-loggings/*
+logging/*
 files/*

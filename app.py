@@ -814,6 +814,11 @@ def decompress():
 
 
 
+@app.route("/video/test")
+def video_test():
+    return render_template("videos/test1.html", movie="./files/videos/test1.mp4")
+
+
 
 #* 404
 @app.errorhandler(404)
