@@ -814,10 +814,15 @@ def decompress():
 
 
 
-@app.route("/video/test")
+@app.route("/view")
 def video_test():
-    return render_template("videos/test1.html", movie="./files/videos/test1.mp4")
+    token = request.args.get("token","c")
+    cursor.execute("select realname,author,uploadtime,descr from videos where ikunname=%s",(token))
+    name, author, utime, descr = cursor.fetchall()[0]
+    return render_template("videos/test1.html", vpath="static/videos/"+token+".mp4", head=name, utime=utime, name=author, descr=descr)
 
+
+# @app.route("/view/upload")
 
 
 #* 404

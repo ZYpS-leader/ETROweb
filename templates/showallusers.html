@@ -6,7 +6,7 @@
 <h1>All the users</h1>
 <ul>
     {% for i in all_user %}
-        <li><a href="{{ url_for('user_space',username=i.a) }}">{{i.b}}</li>
+        <li><a href="{{ url_for('user_space',username=i.a) }}">{{i.b}}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}

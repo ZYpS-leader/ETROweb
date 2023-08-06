@@ -7,9 +7,12 @@
         <link rel="icon" href="{{ url_for('static',filename='favicon.ico') }}" type="image/x-icon">
 </head>
 <body>
-    <video width="900" height="600" controls="controls">
-        <source src="{{ movie }}" type="video/mp4" />
-
+    <h3>{{ head }}</h3>
+    <img src="static/videoplay.png"/>{{ utime }}&emsp14;<a href="{{ url_for('user_space',username=name) }}">{{name}}</a>
+    <video height="640" width="900" controls="controls">
+        <source src="{{ vpath }}" type="video/mp4">
+        无法支持MP4渲染.
     </video>
+    {{ descr }}
 </body>
 </html>
